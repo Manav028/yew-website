@@ -1,0 +1,14 @@
+.hovereffect::after{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 3px;
+    left: 0px;
+    bottom: -5px;
+    background-color: black;
+    transition: all ease-in 0.8s;
+}
+
+.hovereffect:hover::after{
+    width: 100%;
+}
