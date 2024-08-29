@@ -8,14 +8,14 @@ import Cart from "./cart";
 const links = ["Home", "Category", "About Us", "Support"];
 
 export default function Header() {
-  const [bgColor, setBgColor] = useState("#ff0000");
-  const [textcolor, settextcolor] = useState("#ffffff");
+  const [bgColor, setBgColor] = useState("#F5F5F5");
+  const [textcolor, settextcolor] = useState("#333333");
 
   return (
     <header>
       <nav
-        className="py-2 px-[3vw] flex justify-between items-center"
-        style={{ backgroundColor: bgColor , color:textcolor}}
+        className="py-3 px-[3vw] flex justify-between items-center shadow-md"
+        style={{ backgroundColor: bgColor, color: textcolor }}
       >
         <div className="text-3xl">YEW</div>
         <ul className="flex gap-4 text-s">
@@ -24,48 +24,19 @@ export default function Header() {
               <a className={`relative ${styles.hovereffect}`} href="">
                 {item}
               </a>
-            </li> 
+            </li>
           ))}
         </ul>
         <div className="flex gap-3">
-          <Search textcolor={textcolor}/>
+          <Search textcolor={textcolor} />
           <div className="flex items-center">
-            <Person textcolor={textcolor}/>
+            <Person textcolor={textcolor} />
             <p>Sign in</p>
           </div>
-          <Cart textcolor={textcolor}/>
+          <Cart textcolor={textcolor} />
         </div>
       </nav>
-      <div className="flex">
-        <div className="flex justify-end p-4">
-          <label htmlFor="colorPicker" className="mr-2">
-            Choose Header Color:
-          </label>
-          <input
-            type="color"
-            id="colorPicker"
-            value={bgColor}
-            onChange={(e) => {
-              setBgColor(e.target.value);
-            }}
-            className="border-2 border-gray-300 rounded"
-          />
-        </div>
-        <div className="flex justify-end p-4">
-          <label htmlFor="textcolorPicker" className="mr-2">
-            Choose Text Color:
-          </label>
-          <input
-            type="color"
-            id="textcolorPicker"
-            value={textcolor}
-            onChange={(e) => {
-              settextcolor(e.target.value);
-            }}
-            className="border-2 border-gray-300 rounded"
-          />
-        </div>
-      </div>
+      <div className="flex"></div>
     </header>
   );
 }
